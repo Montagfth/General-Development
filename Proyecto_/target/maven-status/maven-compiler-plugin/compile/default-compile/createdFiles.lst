@@ -17,6 +17,7 @@ InformativePanels\Informativo05.class
 Panels\panelInformativo$7.class
 Panels\panelRegistro$4.class
 Administrative\panelAdministrator$1.class
+Controller\Servicio01Controller.class
 InformativePanels\Informativo02.class
 InformativePanels\Informativo02$1.class
 DatabaseModels\Cliente.class
@@ -31,6 +32,7 @@ InformativePanels\Informativo06$1.class
 Modificaciones\DialogEditarEmpleado.class
 Interfaces\DAOReservaServDos.class
 DatabaseModels\ReservaServDos.class
+Controller\AdministratorController.class
 Model\DAOReservaServTresIMPLEMENT.class
 Interfaces\DAOEmpleado.class
 View\ventanaAdministrador$1.class
@@ -52,6 +54,7 @@ Services\panelService3$2.class
 View\ventanaPrincipal$3.class
 DatabaseModels\Mantenimiento.class
 DatabaseModels\ReservaAuto.class
+Controller\RegistroController.class
 InformativePanels\Informativo04.class
 Services\panelService1$5.class
 Panels\panelInformativo.class
@@ -65,6 +68,7 @@ Panels\panelInformativo$8.class
 Administrative\panelAdministrator.class
 Panels\panelRegistro$2.class
 Services\panelService1$4.class
+Controller\InicioSesionController.class
 Services\panelService2$2.class
 Services\panelService1$7.class
 View\ventanaPrincipal$1.class

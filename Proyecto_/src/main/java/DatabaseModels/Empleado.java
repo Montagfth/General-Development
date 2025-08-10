@@ -9,7 +9,10 @@ package DatabaseModels;
  * @author Fabrizio
  */
 public class Empleado {
-    
+
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int ID_Empleado;
     private String Nombre_Empleado;
     private int DNI_Empleado;
@@ -17,7 +20,10 @@ public class Empleado {
     private String FechaContratacion_Empleado;
     private String Cargo_Empleado;
     private int Estado_Empleado;
-    
+
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getID_Empleado() {
         return ID_Empleado;
     }
@@ -73,5 +79,4 @@ public class Empleado {
     public void setEstado_Empleado(int Estado_Empleado) {
         this.Estado_Empleado = Estado_Empleado;
     }
-    
 }

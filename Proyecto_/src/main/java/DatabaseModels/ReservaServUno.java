@@ -12,12 +12,18 @@ import java.sql.Timestamp;
  */
 public class ReservaServUno {
     
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int ID_ReservaServUno;
     private int ID_Auto;
     private String Estado_ReservaServUno;
     private Timestamp Fecha_ReservaServUno;
     private String DNI_Cliente;
     
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getID_ReservaServUno() {
         return ID_ReservaServUno;
     }
@@ -57,5 +63,4 @@ public class ReservaServUno {
     public void setDNI_Cliente(String DNI_Cliente) {
         this.DNI_Cliente = DNI_Cliente;
     }
-    
 }

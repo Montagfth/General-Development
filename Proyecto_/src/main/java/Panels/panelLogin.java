@@ -17,12 +17,58 @@ import javax.swing.SwingUtilities;
 
 public class panelLogin extends javax.swing.JPanel {
 
+    // =====================================================
+    // INCIALIZACION DE CONSTRUCTOR:
+    // =====================================================
     public panelLogin() {
         initComponents();
         JTFCredencial.requestFocus();
         estilosPanelLogin();
     }
 
+    // =====================================================
+    // CONFIGURACION DE METODOS VISUALES:
+    // =====================================================
+    public void mostradorPaneles(JPanel panel) {
+        panel.setSize(
+                759,
+                446);
+        panel.setLocation(
+                0,
+                0);
+        PnlContenedorGeneral.removeAll();
+        PnlContenedorGeneral.add(
+                panel,
+                BorderLayout.CENTER);
+        PnlContenedorGeneral.revalidate();
+        PnlContenedorGeneral.repaint();
+    }
+
+    public void estilosPanelLogin() {
+        //Leyendas en campo de ingreso de texto:
+        JTFCredencial.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT, 
+                "Ingrese sus credenciales");
+        
+        //Color de los botones:
+        BtnInicioSesion.setBackground(new Color(
+                51, 
+                51,
+                51));
+        BtnRegistrarse.setBackground(new Color(
+                51,
+                51,
+                51));
+        
+        //Color del texto dentro del boton:
+        BtnRegistrarse.setForeground(Color.WHITE);
+        BtnRegistrarse.setForeground(Color.WHITE);
+    }
+
+    // =====================================================
+    // FUNCIONALIDADES:
+    // =====================================================
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -173,39 +219,43 @@ public class panelLogin extends javax.swing.JPanel {
         ventanaPrincipal.mostrarPanelRegistro();
     }//GEN-LAST:event_BtnRegistrarseActionPerformed
 
-    public void estilosPanelLogin() {
-        //Leyendas en campo de ingreso de texto:
-        JTFCredencial.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Ingrese sus credenciales");
-        //Color de los botones:
-        BtnInicioSesion.setBackground(new Color(51, 51, 51));
-        BtnRegistrarse.setBackground(new Color(51, 51, 51));
-        //Color del texto dentro del boton:
-        BtnRegistrarse.setForeground(Color.WHITE);
-        BtnRegistrarse.setForeground(Color.WHITE);
-    }
-
 
 private void BtnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInicioSesionActionPerformed
+    
+    //Cierre de sesion actual:
+    Sesion.cerrarSesion();
 
     //Validacion de credenciales:
     String dni = JTFCredencial.getText();
 
     if (dni.isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Debe completar el campo con sus credenciales.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(
+                null, 
+                "Debe completar el campo con sus credenciales.", 
+                "Tesla Inc.", 
+                JOptionPane.WARNING_MESSAGE);
         JTFCredencial.setText("");
         JTFCredencial.requestFocus();
         return;
     }
 
     if (!dni.matches("\\d+")) {
-        JOptionPane.showMessageDialog(null, "La credencial debe contener solo números.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(
+                null, 
+                "La credencial debe contener solo números.", 
+                "Tesla Inc.", 
+                JOptionPane.WARNING_MESSAGE);
         JTFCredencial.setText("");
         JTFCredencial.requestFocus();
         return;
     }
 
     if (dni.length() != 9 || !dni.matches("\\d{9}")) {
-        JOptionPane.showMessageDialog(null, "La credencial debe tener exactamente 9 dígitos.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(
+                null, 
+                "La credencial debe tener exactamente 9 dígitos.", 
+                "Tesla Inc.", 
+                JOptionPane.WARNING_MESSAGE);
         JTFCredencial.setText("");
         JTFCredencial.requestFocus();
         return;
@@ -239,29 +289,20 @@ private void BtnInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//G
             // Cerramos el login actual
             SwingUtilities.getWindowAncestor(this).dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "DNI no encontrado. Verifique sus datos.", "Tesla Inc.", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(
+                    null,
+                    "DNI no encontrado. Verifique sus datos.", 
+                    "Tesla Inc.",
+                    JOptionPane.WARNING_MESSAGE);
         }
     } catch (Exception e) {
-        System.out.println("Error: " + e.getMessage());
+        System.out.println("ERROR: " + e.getMessage());
     }
 }//GEN-LAST:event_BtnInicioSesionActionPerformed
-
 
     private void JTFCredencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFCredencialActionPerformed
         //Not to code here.
     }//GEN-LAST:event_JTFCredencialActionPerformed
-
-    public void mostradorPaneles(JPanel panel) {
-
-        panel.setSize(759, 446);
-        panel.setLocation(0, 0);
-
-        PnlContenedorGeneral.removeAll();
-        PnlContenedorGeneral.add(panel, BorderLayout.CENTER);
-        PnlContenedorGeneral.revalidate();
-        PnlContenedorGeneral.repaint();
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnInicioSesion;

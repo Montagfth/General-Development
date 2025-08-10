@@ -12,13 +12,18 @@ import java.sql.Timestamp;
  */
 public class ReservaServDos {
 
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int ID_ReservaServDos;
     private int ID_Autoparte;
-    //private int ID_Cliente;
     private String DNI_Cliente;
     private String Estado_ReservaServDos;
     private Timestamp Fecha_ReservaServDos;
 
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getID_ReservaServDos() {
         return ID_ReservaServDos;
     }
@@ -34,16 +39,6 @@ public class ReservaServDos {
     public void setID_Autoparte(int ID_Autoparte) {
         this.ID_Autoparte = ID_Autoparte;
     }
-    /*
-       public int getID_Cliente() {
-        return ID_Cliente;
-    }
-
-    public void setID_Cliente(int ID_Cliente) {
-        this.ID_Cliente = ID_Cliente;
-    }
-    */
- 
 
     public String getEstado_ReservaServDos() {
         return Estado_ReservaServDos;
@@ -68,6 +63,4 @@ public class ReservaServDos {
     public void setDNI_Cliente(String DNI_Cliente) {
         this.DNI_Cliente = DNI_Cliente;
     }
-
-    
 }

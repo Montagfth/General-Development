@@ -10,6 +10,9 @@ package DatabaseModels;
  */
 public class Mantenimiento {
     
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int ID_Mantenimiento;
     private int ID_Auto;
     private int ID_Empleado;
@@ -17,6 +20,9 @@ public class Mantenimiento {
     private String Descripcion_Mantenimiento;
     private int Costo_Mantenimiento;
 
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getID_Mantenimiento() {
         return ID_Mantenimiento;
     }
@@ -64,5 +70,4 @@ public class Mantenimiento {
     public void setCosto_Mantenimiento(int Costo_Mantenimiento) {
         this.Costo_Mantenimiento = Costo_Mantenimiento;
     }
-    
 }

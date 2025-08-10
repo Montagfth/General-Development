@@ -4,14 +4,19 @@ package DatabaseModels;
 
 public class Autopartes {
     
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int ID_Autoparte;
     private String Nombre_Autoparte;
     private String Categoria_Autoparte;
     private int Stock_Autoparte;
     private int Precio_Autoparte;
-    
     private byte[] Imagen_Autoparte;
 
+    // ====================================================    
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public byte[] getImagen_Autoparte() {
         return Imagen_Autoparte;
     }

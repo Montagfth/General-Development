@@ -2,12 +2,18 @@ package DatabaseModels;
 
 public class Administrador {
 
+    // ====================================================
+    // ATRIBUTOS DE MANIPULACION
+    // ====================================================
     private int id;
     private String nombre;
     private String correo;
     private String dni;
     private byte[] foto;
 
+    // ====================================================
+    // MANIPULACION GLOBAL DE COMPONENTES
+    // ====================================================
     public int getId() {
         return id;
     }
@@ -39,7 +45,7 @@ public class Administrador {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
+
     public byte[] getFoto() {
         return foto;
     }

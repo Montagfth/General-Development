@@ -10,20 +10,25 @@ package DatabaseModels;
  */
 public class Sesion {
 
-    public static Cliente clienteLogueado;
+    // ==========================================
+    // INICIALIZACION DE VARIABLES DE ACCESO
+    // ==========================================
+    public static Cliente clienteLogueado = null;
+    public static Administrador adminLogueado = null;
 
-    public static Administrador adminLogueado;
-
-    public static void cerrarSesion() {
-        clienteLogueado = null;
-        adminLogueado = null;
-    }
-
+    // =======================================================
+    // AUTENTICACION DE ADMINISTRADORES | PERSONAL | CLIENTES
+    // =======================================================
     public static boolean esAdmin() {
         return adminLogueado != null;
     }
 
     public static boolean esCliente() {
         return clienteLogueado != null;
+    }
+
+    public static void cerrarSesion() {
+        clienteLogueado = null;
+        adminLogueado = null;
     }
 }

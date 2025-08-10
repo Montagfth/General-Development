@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import Administrative.panelAdministrator;
+import Controller.AdministratorController;
 import DatabaseModels.Administrador;
 import java.awt.Color;
 import java.awt.Image;
@@ -14,47 +15,109 @@ import javax.swing.ImageIcon;
 
 public class ventanaAdministrador extends javax.swing.JFrame {
 
+    // =================================================
+    // INICIALIZACION DE VARIABLES:
+    // =================================================
+    private AdministratorController AdminCtrllr;
+    private panelAdministrator panelAdministrador;
     private Administrador administrador;
 
+    // =================================================
+    // INICIALIZACION DE COMPONENTES DE ARRANQUE:
+    // =================================================
     public ventanaAdministrador(Administrador administrador) {
         this.administrador = administrador;
         initComponents();
         this.setLocationRelativeTo(null);
-        inicializacionPanel();
+        panelAdministrador = new panelAdministrator();
+        AdminCtrllr = new AdministratorController(panelAdministrador);
+
+        inicializacionContenedorJFRAME();
         cargaFechaHora();
         mostrarDatosAdministrador();
-        estilosJFrameAdmin();
+        estilosContenedorJFRAME();
         setTitle("TESLA Motors Inc.");
     }
 
+    // =================================================
+    // CARGA DE ESTILOS PARA EL FRAME:
+    // =================================================
+    // Creacion - muestra de fecha y hora:
     public void cargaFechaHora() {
-
         LocalDate now = LocalDate.now();
-        Locale Regional = new Locale("es", "ES");
-        LblFecha_Hora.setText(now.format(DateTimeFormatter.ofPattern("dd '|' MMMM '|' YYYY", Regional)));
+        Locale Regional = new Locale(
+                "es",
+                "ES");
+        String fechaFormateada = now.format(
+                DateTimeFormatter.ofPattern(
+                        "dd '|' MMMM '|' yyyy",
+                        Regional));
+        LblFecha_Hora.setText(fechaFormateada);
     }
 
-    public void estilosJFrameAdmin() {
-        BtnCerrarSesion.setBackground(new Color(51, 51, 51));
+    // Estilos para el JFrame:
+    public void estilosContenedorJFRAME() {
+        // Estilo de boton: CERRAR SESION 
+        BtnCerrarSesion.setBackground(new Color(
+                51,
+                51,
+                51));
         BtnCerrarSesion.setForeground(Color.WHITE);
+
+        // NOTA: Cargar mas estilos aqui.
     }
 
-    public void inicializacionPanel() {
-
+    // Inicializacion de paneles para contener:
+    public void inicializacionContenedorJFRAME() {
         PnlContenidoPaneles.setLayout(new BorderLayout());
-        mostrarPaneles(new panelAdministrator());
+        mostrarPaneles(panelAdministrador);
     }
 
+    // Mostrado de informacion de panel:
     public void mostrarPaneles(JPanel panel) {
-
-        panel.setSize(1194, 694);
-
+        panel.setSize(
+                1194,
+                694);
         PnlContenidoPaneles.removeAll();
-        PnlContenidoPaneles.add(panel, BorderLayout.CENTER);
+        PnlContenidoPaneles.add(
+                panel,
+                BorderLayout.CENTER);
         PnlContenidoPaneles.revalidate();
         PnlContenidoPaneles.repaint();
     }
 
+    //Muestra de datos informativos del panel:
+    private void mostrarDatosAdministrador() {
+        LblJerarquia.setText(administrador.getNombre().toUpperCase());
+        LblJerarquia1.setText(administrador.getDni());
+
+        // Mostrar imagen del administrador si existe
+        byte[] imagenBytes = administrador.getFoto();
+        if (imagenBytes != null && imagenBytes.length > 0) {
+            LblLogo.setIcon(
+                    escalarImagen(
+                    imagenBytes,
+                    LblLogo.getWidth(),
+                    LblLogo.getHeight()));
+        } else {
+            // NOTA: Si no hay imagen, se puede dejar una por defecto:
+            // LblLogo.setIcon(new ImageIcon(getClass().getResource("ruta: C:/...")));
+        }
+    }
+
+    // Escalamiento de imagen dinamica:
+    private ImageIcon escalarImagen(byte[] imageBytes, int ancho, int alto) {
+        ImageIcon icon = new ImageIcon(imageBytes);
+        Image img = icon.getImage().getScaledInstance(
+                ancho,
+                alto,
+                Image.SCALE_SMOOTH);
+        return new ImageIcon(img);
+    }
+
+    // =================================================
+    // FUNCIONALIDADES
+    // =================================================
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -214,42 +277,9 @@ public class ventanaAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCerrarSesionActionPerformed
-
-        int response = JOptionPane.showConfirmDialog(null, "¿Esta seguro de salir de su sesion?", "Tesla Inc.", JOptionPane.YES_NO_OPTION);
-
-        if (response == JOptionPane.YES_OPTION) {
-
-            loginPrototipo Ventana_Login = new loginPrototipo();
-            Ventana_Login.setVisible(true);
-            this.setVisible(false);
-
-        } else {
-            //Not to programm here.
-        }
+        //Invocacion de funcionalidad encapsulada:
+        AdminCtrllr.cerrarSesion();
     }//GEN-LAST:event_BtnCerrarSesionActionPerformed
-
-    private void mostrarDatosAdministrador() {
-        LblJerarquia.setText(administrador.getNombre().toUpperCase());
-        LblJerarquia1.setText(administrador.getDni());
-
-        // Mostrar imagen del administrador si existe
-        byte[] imagenBytes = administrador.getFoto();
-        if (imagenBytes != null && imagenBytes.length > 0) {
-            ImageIcon icon = new ImageIcon(imagenBytes);
-
-            // Escalar imagen al tamaño del JLabel
-            Image imagenEscalada = icon.getImage().getScaledInstance(
-                    LblLogo.getWidth(),
-                    LblLogo.getHeight(),
-                    Image.SCALE_SMOOTH
-            );
-
-            LblLogo.setIcon(new ImageIcon(imagenEscalada));
-        } else {
-            // Si no hay imagen, puedes dejar una por defecto si quieres
-            //LblLogo.setIcon(new ImageIcon(getClass().getResource("ruta")));
-        }
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCerrarSesion;

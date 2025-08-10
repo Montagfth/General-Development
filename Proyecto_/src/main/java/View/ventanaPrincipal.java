@@ -16,26 +16,14 @@ import javax.swing.ImageIcon;
 
 public class ventanaPrincipal extends javax.swing.JFrame {
 
+    // =================================================
+    // INICIALIZACION DE VARAIBLES:
+    // =================================================
     private Cliente cliente;
 
-    /*
-       public ventanaPrincipal() {
-        initComponents();
-        this.setLocationRelativeTo(null);
-        cargaFechaHora();
-        cargaPanelInformativo(); 
-        //mostrarDatosCliente();
-    }
-        public ventanaPrincipal(Cliente cliente) {
-        this.cliente = cliente;
-        initComponents();
-        this.setLocationRelativeTo(null);
-        cargaFechaHora();
-        mostrarDatosCliente();
-        cargaPanelInformativo();
-        estilosJFrameVentanaPrinicipal();
-    }
-     */
+    // =================================================
+    // INICIALIZACION DE CONSTRUTORES PARAMETRIZADOS:
+    // =================================================
     public ventanaPrincipal(Cliente cliente) {
         this.cliente = cliente;
         initComponents();
@@ -47,13 +35,32 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         setTitle("TESLA Motors Inc.");
     }
 
+    // =================================================
+    // ESTILOS PARA EL PANEL:
+    // =================================================
     public void estilosJFrameVentanaPrinicipal() {
         //Color del boton:
-        BtnAutos.setBackground(new Color(51, 51, 51));
-        BtnAutopartes.setBackground(new Color(51, 51, 51));
-        BtnMantenimiento.setBackground(new Color(51, 51, 51));
-        BtnAutos1.setBackground(new Color(51, 51, 51));
-        BtnCerrarSesion.setBackground(new Color(51, 51, 51));
+        BtnAutos.setBackground(new Color(
+                51,
+                51,
+                51));
+        BtnAutopartes.setBackground(new Color(
+                51,
+                51,
+                51));
+        BtnMantenimiento.setBackground(new Color(
+                51,
+                51,
+                51));
+        BtnAutos1.setBackground(new Color(
+                51,
+                51,
+                51));
+        BtnCerrarSesion.setBackground(new Color(
+                51,
+                51,
+                51));
+
         //Color del texto en el boton:
         BtnAutos.setForeground(Color.WHITE);
         BtnAutopartes.setForeground(Color.WHITE);
@@ -64,8 +71,14 @@ public class ventanaPrincipal extends javax.swing.JFrame {
 
     public void cargaFechaHora() {
         LocalDate now = LocalDate.now();
-        Locale Regional = new Locale("es", "ES");
-        LblFecha_Hora3.setText(now.format(DateTimeFormatter.ofPattern("dd '|' MMMM '|' YYYY", Regional)));
+        Locale Regional = new Locale(
+                "es",
+                "ES");
+        String fechaFormateada = now.format(
+                DateTimeFormatter.ofPattern(
+                        "dd '|' MMMM '|' yyyy",
+                        Regional));
+        LblFecha_Hora3.setText(fechaFormateada);
     }
 
     private void mostrarDatosCliente() {
@@ -95,16 +108,19 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         PnlContenidoPaneles.setLayout(new BorderLayout());
         panelInformativo panelInfo = new panelInformativo();
         mostrarPaneles(panelInfo);
-        LblJerarquia.setText("TESLA CORPORATION");
 
+        LblJerarquia.setText("TESLA CORPORATION");
         System.out.println("Panel informativo cargado. Componentes en PnlContenidoPaneles: " + PnlContenidoPaneles.getComponentCount());
     }
 
     public void mostrarPaneles(JPanel panel) {
-        panel.setSize(1194, 694);
-
+        panel.setSize(
+                1194,
+                694);
         PnlContenidoPaneles.removeAll();
-        PnlContenidoPaneles.add(panel, BorderLayout.CENTER);
+        PnlContenidoPaneles.add(
+                panel,
+                BorderLayout.CENTER);
         PnlContenidoPaneles.revalidate();
         PnlContenidoPaneles.repaint();
 
@@ -112,6 +128,9 @@ public class ventanaPrincipal extends javax.swing.JFrame {
         this.repaint();
     }
 
+    // =================================================
+    // FUNCIONALIDADES:
+    // =================================================
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -390,6 +409,7 @@ private void BtnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//G
         Ventana_Login.setVisible(true);
         this.setVisible(false);
     } else {
+
     }
     }//GEN-LAST:event_BtnCerrarSesionActionPerformed
 

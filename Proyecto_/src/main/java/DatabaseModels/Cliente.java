@@ -9,9 +9,10 @@ package DatabaseModels;
  * @author Fabrizio
  */
 public class Cliente {
-
-    //Campos de captura de informacion: First Name, Second Name, Surname
     
+    // ====================================================
+    // ATRIBUTOS DE MANIPULACION
+    // ====================================================
     public int ID_Cliente;
     public String Nombre_Cliente;
     public String SegundoNombre_Cliente; //Agregados 08/06/25
@@ -22,6 +23,9 @@ public class Cliente {
     public String SegundoTelefono_Cliente; //Agregados 08/06/25
     public byte [] fotoCliente;
     
+    // ====================================================
+    // MANIPULACION GLOBAL DE COMPONENTES
+    // ====================================================
     public int getID_Cliente() {
         return ID_Cliente;
     }
@@ -93,5 +97,4 @@ public class Cliente {
     public void setFotoCliente(byte[] fotoCliente) {
         this.fotoCliente = fotoCliente;
     }
-    
 }

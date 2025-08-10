@@ -14,6 +14,9 @@ import java.time.LocalDate;
  */
 public class ReservaServTres {
 
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int idReserva;
     private String tipoVehiculo, servicioSolicitado;
     private String numeroMotor, numeroSerie;
@@ -25,6 +28,9 @@ public class ReservaServTres {
     private BigDecimal precio;
     private String dniCliente, dniEmpleado;
 
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getIdReserva() {
         return idReserva;
     }
@@ -144,5 +150,4 @@ public class ReservaServTres {
     public void setDniEmpleado(String dniEmpleado) {
         this.dniEmpleado = dniEmpleado;
     }
-
 }

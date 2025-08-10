@@ -11,13 +11,20 @@ import java.time.LocalDate;
  * @author Fabrizio
  */
 public class ReservaAuto {
+    
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int idAuto;
     private String marca;
     private String modelo;
     private int anio;
     private LocalDate fechaReserva;
     private String descripcion;
-
+    
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getIdAuto() {
         return idAuto;
     }

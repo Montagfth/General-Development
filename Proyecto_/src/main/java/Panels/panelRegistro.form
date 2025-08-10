@@ -49,68 +49,73 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="JSeparador02" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LblIndicaciones" alignment="0" pref="506" max="32767" attributes="0"/>
-                              <Component id="JSeparador01" alignment="0" max="32767" attributes="0"/>
-                              <Component id="JSeparador03" alignment="0" max="32767" attributes="0"/>
-                              <Component id="LblNotaInformativa" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="LblPrimerNombre" max="32767" attributes="0"/>
-                                      <Component id="JTFPrimerNombre" pref="233" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="417" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="JTFSegundoNombre" pref="233" max="32767" attributes="0"/>
-                                      <Component id="LblSegundoNombre" max="32767" attributes="0"/>
+                                      <Component id="JSeparador02" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="JSeparador01" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="JSeparador03" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="LblNotaInformativa" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="LblPrimerNombre" max="32767" attributes="0"/>
+                                              <Component id="JTFPrimerNombre" pref="233" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="JTFSegundoNombre" pref="233" max="32767" attributes="0"/>
+                                              <Component id="LblSegundoNombre" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="LblApellido" max="32767" attributes="0"/>
+                                              <Component id="JTFApellido" pref="233" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="JTFIdentificacionDNI" pref="233" max="32767" attributes="0"/>
+                                              <Component id="LblIdentificacionDNI" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="LblEmail" max="32767" attributes="0"/>
+                                              <Component id="JTFEmail" pref="233" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="JTFNumeroPrincipal" max="32767" attributes="0"/>
+                                              <Component id="LblNumeroPrincipal" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="LblNumeroSecundario" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="JTFNumeroSecundario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="LblApellido" max="32767" attributes="0"/>
-                                      <Component id="JTFApellido" pref="233" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="JTFIdentificacionDNI" pref="233" max="32767" attributes="0"/>
-                                      <Component id="LblIdentificacionDNI" max="32767" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="610" max="-2" attributes="0"/>
+                                  <Component id="BtnRegistrarse" min="-2" pref="133" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="LblEmail" max="32767" attributes="0"/>
-                                      <Component id="JTFEmail" pref="233" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="JTFNumeroPrincipal" max="32767" attributes="0"/>
-                                      <Component id="LblNumeroPrincipal" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="LblNumeroSecundario" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="JTFNumeroSecundario" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="492" max="-2" attributes="0"/>
+                                  <Component id="LblNotaInformativa1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="BtnRetornar" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="0" pref="437" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="610" max="-2" attributes="0"/>
-                          <Component id="BtnRegistrarse" min="-2" pref="133" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="492" max="-2" attributes="0"/>
-                          <Component id="LblNotaInformativa1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BtnRetornar" min="-2" pref="100" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="LblIndicaciones" alignment="1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="443" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>

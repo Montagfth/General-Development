@@ -2,6 +2,9 @@ package DatabaseModels;
 
 public class Auto {
     
+    // ====================================================
+    // ATRIBUTOS:
+    // ====================================================
     private int ID_Auto;
     private String Marca_Auto;
     private String Modelo_Auto;
@@ -9,6 +12,9 @@ public class Auto {
     private int Precio_Auto;
     private byte[] Imagen_Auto;  
 
+    // ====================================================
+    // METODOS DE MANIPULACION GLOBAL:
+    // ====================================================
     public int getID_Auto() {
         return ID_Auto;
     }

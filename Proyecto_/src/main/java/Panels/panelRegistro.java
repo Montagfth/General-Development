@@ -1,5 +1,6 @@
 package Panels;
 
+import Controller.RegistroController;
 import DatabaseModels.Cliente;
 import Interfaces.DAOCliente;
 import Model.DAOClienteIMPLEMENT;
@@ -9,46 +10,127 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Fabrizio
  */
 public class panelRegistro extends javax.swing.JPanel {
-
-    // Agregar referencia al JFrame principal
+    
+    // =============================================
+    // INICIALIZACION DE VARIABLES:
+    // =============================================
+    private RegistroController registroController;
     private loginPrototipo ventanaPrincipal;
-
+    
+    // =============================================
+    // INICIALIZACION DE CONSTRUCTORES:
+    // =============================================
     // Constructor modificado para recibir la referencia
     public panelRegistro(loginPrototipo ventanaPrincipal) {
         this.ventanaPrincipal = ventanaPrincipal;
         initComponents();
         estilosPanelRegistro();
+        registroController = new RegistroController(this);
     }
 
     // Constructor sin parámetros para compatibilidad
     public panelRegistro() {
         initComponents();
         estilosPanelRegistro();
+        registroController = new RegistroController(this);
     }
 
-    public void estilosPanelRegistro () {
+    // ================================================
+    // MANIPULADOR(public) DE COMPONENTES DEL PANEL:
+    // ================================================
+    // Manipuladores de campos de entrada de texto:
+    public JTextField getJTFPrimerNombre() {
+        return JTFPrimerNombre;
+    }
+
+    public JTextField getJTFSegundoNombre() {
+        return JTFSegundoNombre;
+    }
+
+    public JTextField getJTFApellido() {
+        return JTFApellido;
+    }
+
+    public JTextField getJTFIdentificacionDNI() {
+        return JTFIdentificacionDNI;
+    }
+
+    public JTextField getJTFEmail() {
+        return JTFEmail;
+    }
+
+    public JTextField getJTFNumeroPrincipal() {
+        return JTFNumeroPrincipal;
+    }
+
+    public JTextField getJTFNumeroSecundario() {
+        return JTFNumeroSecundario;
+    }
+
+    // Metodo de limpieza:
+    public void limpiezaCampos() {
+        JTFPrimerNombre.setText("");
+        JTFSegundoNombre.setText("");
+        JTFApellido.setText("");
+        JTFIdentificacionDNI.setText("");
+        JTFEmail.setText("");
+        JTFNumeroPrincipal.setText("");
+        JTFNumeroSecundario.setText("");
+    }
+    
+    // Carga de estilos del panel:
+    public void estilosPanelRegistro() {
+        
         //Leyendas en campos de ingreso de texto:
-        JTFPrimerNombre.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
-        JTFSegundoNombre.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
-        JTFApellido.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
-        JTFIdentificacionDNI.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
-        JTFEmail.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
-        JTFNumeroPrincipal.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
-        JTFNumeroSecundario.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Completar aqui.");
+        JTFPrimerNombre.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT,
+                "Completar aqui.");
+        JTFSegundoNombre.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT,
+                "Completar aqui.");
+        JTFApellido.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT,
+                "Completar aqui.");
+        JTFIdentificacionDNI.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT, 
+                "Completar aqui.");
+        JTFEmail.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT,
+                "Completar aqui.");
+        JTFNumeroPrincipal.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT, 
+                "Completar aqui.");
+        JTFNumeroSecundario.putClientProperty(
+                FlatClientProperties.PLACEHOLDER_TEXT,
+                "Completar aqui.");
+        
         //Color de botones:
-        BtnRegistrarse.setBackground(new Color(51,51,51));
-        BtnRetornar.setBackground(new Color(51,51,51));
+        BtnRegistrarse.setBackground(new Color(
+                51,
+                51, 
+                51));
+        BtnRetornar.setBackground(new Color(
+                51, 
+                51, 
+                51));
+        
         //Color de texto dentro de los botones:
         BtnRegistrarse.setForeground(Color.WHITE);
         BtnRetornar.setForeground(Color.WHITE);
-    }
     
+        // NOTA: Carga de nuevos metodos, aqui.
+    }
+
+    // =============================================
+    // FUNCIONALIDADES:
+    // =============================================
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -179,51 +261,54 @@ public class panelRegistro extends javax.swing.JPanel {
             .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
                 .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                        .addGap(417, 417, 417)
-                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JSeparador02)
-                            .addComponent(LblIndicaciones, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
-                            .addComponent(JSeparador01)
-                            .addComponent(JSeparador03)
-                            .addComponent(LblNotaInformativa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(LblPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JTFPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
-                                .addGap(40, 40, 40)
+                                .addGap(417, 417, 417)
                                 .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(JTFSegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                    .addComponent(LblSegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(JSeparador02)
+                                    .addComponent(JSeparador01)
+                                    .addComponent(JSeparador03)
+                                    .addComponent(LblNotaInformativa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(LblPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JTFPrimerNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                                        .addGap(40, 40, 40)
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(JTFSegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                                            .addComponent(LblSegundoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(LblApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JTFApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                                        .addGap(40, 40, 40)
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(JTFIdentificacionDNI, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                                            .addComponent(LblIdentificacionDNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(LblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JTFEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                                        .addGap(40, 40, 40)
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(JTFNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LblNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
+                                        .addGap(137, 137, 137)
+                                        .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(LblNumeroSecundario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(JTFNumeroSecundario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(LblApellido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JTFApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
-                                .addGap(40, 40, 40)
-                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(JTFIdentificacionDNI, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                    .addComponent(LblIdentificacionDNI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(610, 610, 610)
+                                .addComponent(BtnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(LblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JTFEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
-                                .addGap(40, 40, 40)
-                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(JTFNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LblNumeroPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                                .addGap(137, 137, 137)
-                                .addGroup(PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(LblNumeroSecundario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JTFNumeroSecundario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                        .addGap(610, 610, 610)
-                        .addComponent(BtnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PnlContenedorGeneralLayout.createSequentialGroup()
-                        .addGap(492, 492, 492)
-                        .addComponent(LblNotaInformativa1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BtnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(443, Short.MAX_VALUE))
+                                .addGap(492, 492, 492)
+                                .addComponent(LblNotaInformativa1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnRetornar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 437, Short.MAX_VALUE))
+                    .addComponent(LblIndicaciones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         PnlContenedorGeneralLayout.setVerticalGroup(
             PnlContenedorGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,93 +383,8 @@ private void BtnRetornarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
 }//GEN-LAST:event_BtnRetornarActionPerformed
 
 private void BtnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRegistrarseActionPerformed
-    // Registro de usuario-cliente:
-    String identificacionDNI = JTFIdentificacionDNI.getText().trim();
-    String primerNombre = JTFPrimerNombre.getText().trim();
-    String segundoNombre = JTFSegundoNombre.getText().trim();
-    String apellido = JTFApellido.getText().trim();
-    String email = JTFEmail.getText().trim();
-    String primerTelefono = JTFNumeroPrincipal.getText().trim();
-    String segundoTelefono = JTFNumeroSecundario.getText().trim();
-
-    // Validación mejorada de campos vacíos
-    if (identificacionDNI.trim().isEmpty() || primerNombre.trim().isEmpty()
-            || segundoNombre.trim().isEmpty() || apellido.trim().isEmpty()
-            || email.trim().isEmpty() || primerTelefono.trim().isEmpty()) {
-
-        JOptionPane.showMessageDialog(null,
-                "Por favor, asegúrese de que todos los campos obligatorios estén completos.",
-                "Tesla", JOptionPane.WARNING_MESSAGE);
-        JTFPrimerNombre.requestFocus();
-        return;
-    }
-
-    //Mejoras de validacion ===
-    // 2. Validación específica de DNI
-    if (!identificacionDNI.matches("\\d{9}")) {
-        JOptionPane.showMessageDialog(null,
-                "La credencial debe contener exactamente 9 dígitos numéricos.", "Tesla", JOptionPane.WARNING_MESSAGE);
-        JTFIdentificacionDNI.requestFocus();
-        return;
-    }
-
-    // 3. Validación de email
-    if (!email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")) {
-        JOptionPane.showMessageDialog(null,
-                "Ingrese un correo electrónico válido.", "Tesla", JOptionPane.WARNING_MESSAGE);
-        JTFEmail.requestFocus();
-        return;
-    }
-
-    // 4. Validación de teléfonos
-    if (!primerTelefono.matches("\\d{7,15}")) {
-        JOptionPane.showMessageDialog(null,
-                "El número de teléfono principal debe contener entre 7 y 15 dígitos.", "Tesla", JOptionPane.WARNING_MESSAGE);
-        JTFNumeroPrincipal.requestFocus();
-        return;
-    }
-
-    if (!segundoTelefono.isEmpty() && !segundoTelefono.matches("\\d{7,15}")) {
-        JOptionPane.showMessageDialog(null,
-                "El número de teléfono secundario debe contener entre 7 y 15 dígitos (si se proporciona).", "Tesla", JOptionPane.WARNING_MESSAGE);
-        JTFNumeroSecundario.requestFocus();
-        return;
-    }
-    // ====
-
-    try {
-        Cliente cliente = new Cliente();
-        cliente.setDNI_Cliente(identificacionDNI);
-        cliente.setNombre_Cliente(primerNombre);
-        cliente.setSegundoNombre_Cliente(segundoNombre);
-        cliente.setApellido_Cliente(apellido);
-        cliente.setCorreo_Cliente(email);
-        cliente.setTelefono_Cliente(primerTelefono);
-        cliente.setSegundoTelefono_Cliente(segundoTelefono);
-
-        DAOCliente daoCl = new DAOClienteIMPLEMENT();
-        daoCl.registrar(cliente);
-
-        System.out.println("Se ha registrado correctamente.");
-
-        // Mostrar mensaje de éxito
-        JOptionPane.showMessageDialog(null,
-                "¡Registro exitoso! Bienvenido " + primerNombre + ".",
-                "Tesla", JOptionPane.INFORMATION_MESSAGE);
-
-        // Limpiar campos después del registro exitoso
-        limpiarCampos();
-
-    } catch (Exception e) {
-        System.out.println("Error: " + e.getMessage());
-        JOptionPane.showMessageDialog(null,
-                "Error al registrar el usuario: " + e.getMessage(),
-                "Tesla", JOptionPane.ERROR_MESSAGE);
-    }
-
-    // IMPORTANTE: No crear nueva ventana aquí, usar el sistema de paneles
-    // ventanaPrincipal Ventana_Principal = new ventanaPrincipal();
-    // Ventana_Principal.setVisible(true);
+    // Invocacion de funncionalidad encapsulada:
+    registroController.registrarCliente();
     }//GEN-LAST:event_BtnRegistrarseActionPerformed
 
     private void JTFEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFEmailActionPerformed
